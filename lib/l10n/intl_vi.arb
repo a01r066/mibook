@@ -1,0 +1,7 @@
+{
+  "@@locale": "vi",
+  "helloWorld": "Xin chào!",
+  "@helloWorld": {
+    "description": "Lời chào lập trình viên sơ sinh truyền thống"
+  }
+}

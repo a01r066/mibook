@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mibook/config/flavour_config.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:mibook/generated/l10n.dart';
 
 Future initializeApp() async {
   runApp(const MyApp());
@@ -13,6 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -35,7 +40,7 @@ class _MainPageState extends State<MainPage> {
     final whereAmI = Constants.whereAmI;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("MiBook"),
+        title: Text(AppLocalizations.of(context)?.helloWorld ?? "Hello"),
       ),
         body: Text(whereAmI));
   }
